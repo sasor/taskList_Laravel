@@ -5,10 +5,10 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
 
-		$tasks = Task::orderBy('created_at', 'asc')->get();
-		return view('tasks.index', ['tasks' => $tasks]);
-		// OR
-		//return view('tasks.index')->withTasks($tasks);
+	$tasks = Task::orderBy('created_at', 'asc')->get();
+	return view('tasks.index', ['tasks' => $tasks]);
+	// OR
+	//return view('tasks.index')->withTasks($tasks);
 
 });
 
