@@ -3,6 +3,9 @@
 @section("content")
 	<div class="panel panel-default">
 		<div class="panel-body">
+		
+			@include('common.errors')		
+	
 			<form action="{{ url('task') }}" method="post" class="form-horizontal">
 				<div class="form-group">
 					<label for="name" class="col-md-3 control-label">Task</label>
@@ -15,6 +18,7 @@
 						<button type="submit" class="btn btn-default">Add Task</button>
 					</div>
 				</div>
+				{{ csrf_field() }}
 			</form>
 		</div>
 	</div>
