@@ -4,7 +4,12 @@ use App\Task;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('tasks.index');
+
+		$tasks = Task::orderBy('created_at', 'asc')->get();
+		return view('tasks.index', ['tasks' => $tasks]);
+		// OR
+		//return view('tasks.index')->withTasks($tasks);
+
 });
 
 Route::post('/task', function (Request $request) {
